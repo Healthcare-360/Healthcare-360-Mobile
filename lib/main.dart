@@ -13,13 +13,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-        designSize: const Size(422, 776),
+    return MultiProvider(
+      providers: const [],
+      child: ScreenUtilInit(
+        designSize: const Size(375, 812),
         builder: () {
           return const GetMaterialApp(
             debugShowCheckedModeBanner: false,
             home: Root(),
           );
-        });
+        },
+      ),
+    );
   }
 }
