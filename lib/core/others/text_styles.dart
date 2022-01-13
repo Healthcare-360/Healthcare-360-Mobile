@@ -47,6 +47,20 @@ class TextStyles {
     fontSize: 20,
     fontWeight: FontWeight.w400,
   );
+  static const r_21 = TextStyle(
+    fontSize: 21,
+    fontWeight: FontWeight.w400,
+  );
+
+  static const r_22 = TextStyle(
+    fontSize: 22,
+    fontWeight: FontWeight.w400,
+  );
+
+  static const r_23 = TextStyle(
+    fontSize: 23,
+    fontWeight: FontWeight.w400,
+  );
 
   static const r_24 = TextStyle(
     fontSize: 24,
@@ -106,6 +120,15 @@ class TextStyles {
     fontSize: 22,
     fontWeight: FontWeight.w500,
   );
+  static const m_24 = TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.w500,
+  );
+  static const m_29 = TextStyle(
+    fontSize: 29,
+    fontWeight: FontWeight.w500,
+  );
+
   static const m_36 = TextStyle(
     fontSize: 36,
     fontWeight: FontWeight.w500,

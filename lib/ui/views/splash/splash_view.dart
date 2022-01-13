@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:healthcare_360_mobile/ui/views/onboarding/onboarding_view.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({Key? key}) : super(key: key);
@@ -9,8 +11,8 @@ class SplashView extends StatefulWidget {
 
 class _SplashViewState extends State<SplashView> {
   _waitAndNavigate() async {
-    await Future.delayed(const Duration(seconds: 3));
-    // Get.offAll(() => const OnboardingView1());
+    await Future.delayed(const Duration(seconds: 1));
+    Get.offAll(() => OnboardingView());
   }
 
   @override
@@ -25,10 +27,13 @@ class _SplashViewState extends State<SplashView> {
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
       decoration: const BoxDecoration(
-        gradient: LinearGradient(colors: [
-          Color(0xFF7474BF),
-          Color(0xFF348AC7),
-        ]),
+        gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color(0xFF7474BF),
+              Color(0xFF348AC7),
+            ]),
       ),
       child: SingleChildScrollView(
         child: Column(

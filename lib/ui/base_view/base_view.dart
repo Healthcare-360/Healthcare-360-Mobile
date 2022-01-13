@@ -10,6 +10,11 @@ export 'package:flutter_svg/flutter_svg.dart';
 export 'package:provider/provider.dart';
 export 'package:flutter_screenutil/flutter_screenutil.dart';
 export 'package:flutter_svg/svg.dart';
+export '../shared_widgets/custom_text.dart';
+export '../../core/others/colors.dart';
+export '../../core/others/text_styles.dart';
+export '../../core/others/illustrations.dart';
+export '../../core/others/icons.dart';
 
 class BaseViewWidget extends StatelessWidget {
   final AppBar? appBar;
