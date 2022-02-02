@@ -15,11 +15,13 @@ export '../../core/others/colors.dart';
 export '../../core/others/text_styles.dart';
 export '../../core/others/illustrations.dart';
 export '../../core/others/icons.dart';
+export 'dart:developer';
 
 class BaseViewWidget extends StatelessWidget {
   final AppBar? appBar;
   final bool avoidScrollView;
   final Widget? body;
+  final FloatingActionButton? fab;
   final EdgeInsets? margin;
   final BottomNavigationBar? bottomNavigationBar;
   static double height = 1.0;
@@ -31,7 +33,8 @@ class BaseViewWidget extends StatelessWidget {
       this.bottomNavigationBar,
       required this.avoidScrollView,
       this.margin,
-      this.body})
+      this.body,
+      this.fab})
       : super(key: key);
 
   static devLog(String statement) {
@@ -48,6 +51,7 @@ class BaseViewWidget extends StatelessWidget {
 
     return appBar != null
         ? Scaffold(
+            floatingActionButton: fab,
             // resizeToAvoidBottomInset: false,
             bottomNavigationBar: bottomNavigationBar,
             appBar: appBar,
@@ -72,6 +76,8 @@ class BaseViewWidget extends StatelessWidget {
           )
         : SafeArea(
             child: Scaffold(
+              floatingActionButton: fab,
+
               // resizeToAvoidBottomInset: false,
               bottomNavigationBar: bottomNavigationBar,
 

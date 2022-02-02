@@ -1,0 +1,55 @@
+{
+    "services":[
+
+        {
+            "title": "Diabetes\nPrediction",
+            "icon": "assets/icons/mobile-camera.svg",
+            "route":"/diabetesPredictionView"
+
+            
+        },
+        {
+            "title": "Pneumonia Detection",
+            "icon": "assets/icons/work-in-progress.svg",
+               "route":""
+
+            
+        },
+        {
+            "title":    "Heart\nDisease",
+            "icon": "assets/icons/pulse.svg",
+            "route":""
+
+            
+        },
+
+       {
+        "title": "Lorem\nIpsum",
+    
+            "icon": "assets/icons/work-in-progress.svg",
+            "route":""
+
+          
+        },
+        {
+            "title": "Lorem\nIpsum",
+    
+            "icon": "assets/icons/work-in-progress.svg",
+            "route":""
+
+
+         
+        },
+        {
+            "title": "Lorem\nIpsum",
+    
+            "icon": "assets/icons/work-in-progress.svg",
+            "route":""
+
+             
+        }
+        
+     
+     ]
+
+}
