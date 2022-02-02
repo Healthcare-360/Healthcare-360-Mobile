@@ -22,7 +22,7 @@ abstract class DiabetesClassifier {
   late TfLiteType _inputType;
   late TfLiteType _outputType;
 
-  final String _diabetesLabelsFileName = 'assets/models/diabetes_labels.txt';
+  final String _diabetesLabelsFileName = 'assets/diabetes_labels.txt';
 
   final int _diabetesModellabelsLength = 5;
 

@@ -2,10 +2,11 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart' as notify;
 import 'package:healthcare_360_mobile/ui/views/diabetes_prediction/diabetes_classifier_float.dart';
+import 'package:healthcare_360_mobile/ui/views/diabetes_prediction/diabetes_results_view.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:image/image.dart' as img;
 import 'package:tflite_flutter_helper/tflite_flutter_helper.dart';
-
+import 'package:get/get.dart';
 import 'diabetes_classifer.dart';
 
 class DiabetesViewModel with notify.ChangeNotifier {
@@ -19,12 +20,27 @@ class DiabetesViewModel with notify.ChangeNotifier {
   File? _imageFile;
   File? get imageFile => _imageFile;
 
-  Future<void> getImage() async {
+  Future<void> getImageFromGallery() async {
     final pickedFile =
         await ImagePicker().pickImage(source: ImageSource.gallery);
 
     _imageFile = File(pickedFile!.path);
     notifyListeners();
+    Get.to(() => const DiabetesResultsView(),
+        transition: Transition.noTransition);
+
+    _predict();
+  }
+
+  Future<void> getImageFromCamera() async {
+    final pickedFile =
+        await ImagePicker().pickImage(source: ImageSource.camera);
+
+    _imageFile = File(pickedFile!.path);
+    notifyListeners();
+
+    Get.to(() => const DiabetesResultsView(),
+        transition: Transition.noTransition);
 
     _predict();
   }
@@ -34,6 +50,7 @@ class DiabetesViewModel with notify.ChangeNotifier {
     var pred = _classifier.predict(imageInput);
 
     _category = pred;
+
     notifyListeners();
   }
 }

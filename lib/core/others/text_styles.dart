@@ -151,6 +151,10 @@ class TextStyles {
     fontSize: 20,
     fontWeight: FontWeight.w700,
   );
+  static const b_25 = TextStyle(
+    fontSize: 25,
+    fontWeight: FontWeight.w700,
+  );
   static const b_30 = TextStyle(
     fontSize: 30,
     fontWeight: FontWeight.w700,

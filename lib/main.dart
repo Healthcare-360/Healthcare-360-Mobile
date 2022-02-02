@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
                   transition: Transition.noTransition),
               GetPage(
                   name: '/diabetesPredictionView',
-                  page: () => const DiabetesPredictionView(),
+                  page: () => DiabetesPredictionView(),
                   transition: Transition.noTransition),
             ],
           );
