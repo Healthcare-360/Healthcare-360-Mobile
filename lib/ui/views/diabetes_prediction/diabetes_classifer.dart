@@ -1,6 +1,7 @@
 import 'dart:developer' as dev;
 import 'dart:math';
 
+import 'package:healthcare_360_mobile/core/models/tflite_return_model.dart';
 import 'package:image/image.dart';
 import 'package:collection/collection.dart';
 // import 'package:logger/logger.dart';
@@ -22,7 +23,7 @@ abstract class DiabetesClassifier {
   late TfLiteType _inputType;
   late TfLiteType _outputType;
 
-  final String _diabetesLabelsFileName = 'assets/diabetes_labels.txt';
+  final String _diabetesLabelsFileName = 'assets/diabetes_2_labels.txt';
 
   final int _diabetesModellabelsLength = 5;
 
@@ -105,9 +106,36 @@ abstract class DiabetesClassifier {
     Map<String, double> labeledProb = TensorLabel.fromList(
             labels, _probabilityProcessor.process(_outputBuffer))
         .getMapWithFloatValue();
+    dev.log(labeledProb.toString());
     final pred = getTopProbability(labeledProb);
 
     return Category(pred.key, pred.value);
+  }
+
+  TfLiteReturnModel predictDiabetes(Image image) {
+    TfLiteReturnModel retVal = TfLiteReturnModel();
+    final pres = DateTime.now().millisecondsSinceEpoch;
+    _inputImage = TensorImage(_inputType);
+    _inputImage.loadImage(image);
+    _inputImage = _preProcess();
+    final pre = DateTime.now().millisecondsSinceEpoch - pres;
+
+    dev.log('Time to load image: $pre ms');
+
+    final runs = DateTime.now().millisecondsSinceEpoch;
+    interpreter.run(_inputImage.buffer, _outputBuffer.getBuffer());
+    final run = DateTime.now().millisecondsSinceEpoch - runs;
+
+    dev.log('Time to run inference: $run ms');
+
+    Map<String, double> labeledProb = TensorLabel.fromList(
+            labels, _probabilityProcessor.process(_outputBuffer))
+        .getMapWithFloatValue();
+    dev.log(labeledProb.toString());
+    retVal.results = labeledProb;
+    final pred = getTopProbability(labeledProb);
+    retVal.category = Category(pred.key, pred.value);
+    return retVal;
   }
 
   void close() {

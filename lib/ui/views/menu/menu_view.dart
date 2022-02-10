@@ -13,9 +13,10 @@ class MenuView extends StatelessWidget {
         avoidScrollView: true,
         body: Column(
           children: [
-            const CustomText(
-              'Logo',
-              style: TextStyles.r_23,
+            Image.asset(
+              'assets/logo.png',
+              // scale: 0.25,
+              height: 200,
             ),
             SizedBox(
               height: 25.h,

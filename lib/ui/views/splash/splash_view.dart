@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:healthcare_360_mobile/ui/base_view/base_view.dart';
 import 'package:healthcare_360_mobile/ui/views/onboarding/onboarding_view.dart';
 
 class SplashView extends StatefulWidget {
@@ -23,9 +24,8 @@ class _SplashViewState extends State<SplashView> {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: avoid_unnecessary_containers
     return Container(
-      height: MediaQuery.of(context).size.height,
-      width: MediaQuery.of(context).size.width,
       decoration: const BoxDecoration(
         gradient: LinearGradient(
             begin: Alignment.topCenter,
@@ -35,11 +35,19 @@ class _SplashViewState extends State<SplashView> {
               Color(0xFF348AC7),
             ]),
       ),
-      child: SingleChildScrollView(
-        child: Column(
-          // ignore: prefer_const_literals_to_create_immutables
-          children: [],
-        ),
+      child: CustomScrollView(
+        slivers: [
+          SliverFillRemaining(
+            hasScrollBody: false,
+            child: Column(
+              children: [
+                const Spacer(),
+                Image.asset('assets/logo.png'),
+                const Spacer(),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

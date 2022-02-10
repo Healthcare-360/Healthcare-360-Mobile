@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:healthcare_360_mobile/ui/base_view/base_view.dart';
 import 'package:healthcare_360_mobile/ui/views/diabetes_prediction/diabetes_viewmodel.dart';
 import 'package:slide_to_act/slide_to_act.dart';
@@ -45,7 +46,10 @@ class DiabetesPredictionView extends StatelessWidget {
         children: <Widget>[
           const Spacer(),
           const Spacer(),
-
+          Image.asset(
+            'assets/logo.png',
+            height: 250,
+          ),
           const CustomText(
             'Welcome to Diabetes Prediction Center',
             textAlign: TextAlign.center,
@@ -63,18 +67,23 @@ class DiabetesPredictionView extends StatelessWidget {
           SizedBox(
             height: 30.h,
           ),
-          SlideAction(
-            key: _key,
-            text: 'Get Started',
-            outerColor: HcColors.blue,
-            onSubmit: () {
-              _showPicker(context, context.read<DiabetesViewModel>());
-              Future.delayed(
-                const Duration(seconds: 3),
-                () => _key.currentState!.reset(),
-              );
-            },
-          ),
+          vm.loading
+              ? const SpinKitWanderingCubes(
+                  color: Colors.white,
+                  size: 50.0,
+                )
+              : SlideAction(
+                  key: _key,
+                  text: 'Get Started',
+                  outerColor: HcColors.blue,
+                  onSubmit: () {
+                    _showPicker(context, context.read<DiabetesViewModel>());
+                    Future.delayed(
+                      const Duration(seconds: 3),
+                      () => _key.currentState!.reset(),
+                    );
+                  },
+                ),
           const Spacer(),
 
           const Spacer(),

@@ -10,11 +10,12 @@ class DiabetesResultsView extends StatelessWidget {
   Widget build(BuildContext context) {
     final vm = context.watch<DiabetesViewModel>();
     return BaseViewWidget(
-      avoidScrollView: true,
+      avoidScrollView: false,
       body: Column(
         children: <Widget>[
-          const Spacer(),
-          const Spacer(),
+          SizedBox(
+            height: 30.h,
+          ),
           const CustomText(
             'Diabetes Prediction Center',
             textAlign: TextAlign.center,
@@ -40,30 +41,79 @@ class DiabetesResultsView extends StatelessWidget {
             height: 10.h,
           ),
           const CustomText(
-            'Results',
+            'Max Chances',
             textAlign: TextAlign.center,
-            style: TextStyles.m_16,
+            style: TextStyles.m_18,
           ),
           SizedBox(
-            height: 30.h,
+            height: 15.h,
           ),
           Text(
             // ignore: unnecessary_null_comparison
-            vm.category != null ? vm.category!.label : '',
-            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+            vm.results != null ? vm.results!.category!.label : '',
+            style: const TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.w700,
+              letterSpacing: 0.5,
+              color: HcColors.purple,
+            ),
           ),
           const SizedBox(
             height: 8,
           ),
           Text(
             // ignore: unnecessary_null_comparison
-            vm.category != null
-                ? 'Confidence: ${vm.category?.score.toStringAsFixed(3)}'
+            vm.results != null
+                ? 'Confidence: ${vm.results?.category?.score.toStringAsFixed(3)}'
                 : '',
-            style: const TextStyle(fontSize: 16),
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
           ),
-          const Spacer(),
-          const Spacer(),
+          const SizedBox(
+            height: 20,
+          ),
+          Divider(
+            thickness: 5.h,
+            color: Colors.grey.withOpacity(0.1),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          const Text(
+            // ignore: unnecessary_null_comparison
+            'Complete Result Card',
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Text(
+            // ignore: unnecessary_null_comparison
+            'Mild Diabetes: ${vm.diabetesResults?.mild?.toStringAsFixed(3)}',
+            style: const TextStyle(fontSize: 14),
+          ),
+          Text(
+            // ignore: unnecessary_null_comparison
+            'Moderate  Diabetes: ${vm.diabetesResults?.moderate?.toStringAsFixed(3)}',
+            style: const TextStyle(fontSize: 14),
+          ),
+          Text(
+            // ignore: unnecessary_null_comparison
+            'No Diabetes: ${vm.diabetesResults?.no?.toStringAsFixed(3)}',
+            style: const TextStyle(fontSize: 14),
+          ),
+          Text(
+            // ignore: unnecessary_null_comparison
+            'Proliferative Diabetes: ${vm.diabetesResults?.proliferative?.toStringAsFixed(3)}',
+            style: const TextStyle(fontSize: 14),
+          ),
+          Text(
+            // ignore: unnecessary_null_comparison
+            'Severe Diabetes: ${vm.diabetesResults?.severe?.toStringAsFixed(3)}',
+            style: const TextStyle(fontSize: 14),
+          ),
+          SizedBox(
+            height: 30.h,
+          ),
         ],
       ),
     );

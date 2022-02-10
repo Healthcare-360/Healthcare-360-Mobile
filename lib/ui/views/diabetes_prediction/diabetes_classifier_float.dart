@@ -5,7 +5,7 @@ class DiabetesClassifierFloat extends DiabetesClassifier {
   DiabetesClassifierFloat({int? numThreads}) : super(numThreads: numThreads);
 
   @override
-  String get modelName => 'diabetes_model.tflite';
+  String get modelName => 'diabetes_2_model.tflite';
 
   @override
   NormalizeOp get preProcessNormalizeOp => NormalizeOp(127.5, 127.5);
