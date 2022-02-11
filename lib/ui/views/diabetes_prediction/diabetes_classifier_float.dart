@@ -9,7 +9,8 @@ class DiabetesClassifierFloat extends DiabetesClassifier {
   // String get modelName => 'mobilenet_v1_1.0_224.tflite';
 
   @override
-  NormalizeOp get preProcessNormalizeOp => NormalizeOp(127.5, 127.5);
+  // NormalizeOp get preProcessNormalizeOp => NormalizeOp(127.5, 127.5);
+  NormalizeOp get preProcessNormalizeOp => NormalizeOp(0, 1);
 
   @override
   NormalizeOp get postProcessNormalizeOp => NormalizeOp(0, 1);

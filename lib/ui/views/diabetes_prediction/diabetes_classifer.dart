@@ -79,7 +79,9 @@ abstract class DiabetesClassifier {
   }
 
   TensorImage _preProcess() {
-    int cropSize = min(_inputImage.height, _inputImage.width);
+    // int cropSize = min(_inputImage.height, _inputImage.width);
+    int cropSize = 224;
+
     return ImageProcessorBuilder()
         .add(ResizeWithCropOrPadOp(cropSize, cropSize))
         .add(ResizeOp(
