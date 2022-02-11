@@ -24,6 +24,7 @@ abstract class DiabetesClassifier {
   late TfLiteType _outputType;
 
   final String _diabetesLabelsFileName = 'assets/diabetes_2_labels.txt';
+  // final String _diabetesLabelsFileName = 'assets/animals_labels.txt';
 
   final int _diabetesModellabelsLength = 5;
 

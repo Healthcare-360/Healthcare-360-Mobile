@@ -1,5 +1,0 @@
-Mild Diabetes
-Moderate Diabetes
-No Diabetes
-Profilerative Diabetes
-Severe Diabetes
