@@ -1,5 +1,5 @@
-import 'dart:convert';
 import 'dart:io';
+import 'dart:math';
 
 import 'package:flutter/foundation.dart' as notify;
 import 'package:healthcare_360_mobile/core/models/diabetes_model.dart';
@@ -36,6 +36,13 @@ class DiabetesViewModel with notify.ChangeNotifier {
 
   File? _imageFile;
   File? get imageFile => _imageFile;
+
+  int generateDiabetesReading() {
+    Random random = Random();
+    int randomNumber = random.nextInt(135 - 79) + 79;
+    return randomNumber;
+    // print(randomNumber);
+  }
 
   Future<void> getImageFromGallery() async {
     _imageFile = null;

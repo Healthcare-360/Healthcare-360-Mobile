@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:healthcare_360_mobile/ui/base_view/base_view.dart';
 import 'package:healthcare_360_mobile/ui/views/diabetes_prediction/diabetes_viewmodel.dart';
-import 'package:slide_to_act/slide_to_act.dart';
 
 class DiabetesResultsView extends StatelessWidget {
   const DiabetesResultsView({Key? key}) : super(key: key);
@@ -66,7 +65,25 @@ class DiabetesResultsView extends StatelessWidget {
             vm.results != null
                 ? 'Confidence: ${vm.results?.category?.score.toStringAsFixed(3)}'
                 : '',
-            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          const Text(
+            // ignore: unnecessary_null_comparison
+            'Current Diabetes Reading: ',
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w700,
+              letterSpacing: 0.5,
+              color: HcColors.purple,
+            ),
+          ),
+          Text(
+            // ignore: unnecessary_null_comparison
+            '${vm.generateDiabetesReading()} mg/dl',
+            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
           ),
           const SizedBox(
             height: 20,

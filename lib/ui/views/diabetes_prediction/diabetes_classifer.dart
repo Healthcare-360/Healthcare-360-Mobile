@@ -1,5 +1,4 @@
 import 'dart:developer' as dev;
-import 'dart:math';
 
 import 'package:healthcare_360_mobile/core/models/tflite_return_model.dart';
 import 'package:image/image.dart';
