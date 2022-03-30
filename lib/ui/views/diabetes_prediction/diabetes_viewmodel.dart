@@ -16,8 +16,24 @@ class DiabetesViewModel with notify.ChangeNotifier {
   bool _loading = false;
   bool get loading => _loading;
 
+  bool _loading2 = false;
+  bool get loading2 => _loading2;
+
+  bool _loading3 = false;
+  bool get loading3 => _loading3;
+
   setState(bool state) {
     _loading = state;
+    notifyListeners();
+  }
+
+  setState2(bool state) {
+    _loading2 = state;
+    notifyListeners();
+  }
+
+  setState3(bool state) {
+    _loading3 = state;
     notifyListeners();
   }
 

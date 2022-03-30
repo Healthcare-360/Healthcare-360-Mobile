@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:healthcare_360_mobile/ui/base_view/base_view.dart';
+import 'package:healthcare_360_mobile/ui/cardio/cardio_vascular_viewmodel.dart';
 import 'package:healthcare_360_mobile/ui/root/root.dart';
 import 'package:healthcare_360_mobile/ui/views/diabetes_prediction/diabetes_prediction_view.dart';
 import 'package:healthcare_360_mobile/ui/views/diabetes_prediction/diabetes_viewmodel.dart';
 import 'package:healthcare_360_mobile/ui/views/menu/menu_viewmodel.dart';
+
+import 'ui/cardio/cardio_vascular_hub.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,6 +26,7 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => MenuViewModel()),
         ChangeNotifierProvider(create: (_) => DiabetesViewModel()),
+        ChangeNotifierProvider(create: (_) => CardioVascularViewModel()),
       ],
       child: ScreenUtilInit(
         designSize: const Size(375, 812),
@@ -38,7 +42,11 @@ class MyApp extends StatelessWidget {
                   transition: Transition.noTransition),
               GetPage(
                   name: '/diabetesPredictionView',
-                  page: () => DiabetesPredictionView(),
+                  page: () => const DiabetesPredictionView(),
+                  transition: Transition.noTransition),
+              GetPage(
+                  name: '/cardioHub',
+                  page: () => const CardioVascularHub(),
                   transition: Transition.noTransition),
             ],
           );

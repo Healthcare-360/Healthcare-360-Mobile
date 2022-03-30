@@ -2,54 +2,20 @@
     "services":[
 
         {
-            "title": "Diabetes\nPrediction",
-            "icon": "assets/icons/mobile-camera.svg",
+            "title": "Diabetes Hub",
+            "icon": "assets/icons/blood.svg",
             "route":"/diabetesPredictionView"
 
             
         },
         {
-            "title": "Pneumonia Detection",
-            "icon": "assets/icons/work-in-progress.svg",
-               "route":""
+            "title": "Cardio Vascular Hub",
+            "icon": "assets/icons/heart.svg",
+               "route":"/cardioHub"
 
             
-        },
-        {
-            "title":    "Heart\nDisease",
-            "icon": "assets/icons/pulse.svg",
-            "route":""
-
-            
-        },
-
-       {
-        "title": "Lorem\nIpsum",
-    
-            "icon": "assets/icons/work-in-progress.svg",
-            "route":""
-
-          
-        },
-        {
-            "title": "Lorem\nIpsum",
-    
-            "icon": "assets/icons/work-in-progress.svg",
-            "route":""
-
-
-         
-        },
-        {
-            "title": "Lorem\nIpsum",
-    
-            "icon": "assets/icons/work-in-progress.svg",
-            "route":""
-
-             
         }
-        
-     
+       
      ]
 
 }

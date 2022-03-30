@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:healthcare_360_mobile/ui/base_view/base_view.dart';
+import 'package:healthcare_360_mobile/ui/cardio/cardio_vascular_hub.dart';
+import 'package:healthcare_360_mobile/ui/shared_widgets/menu_tile.dart';
+import 'package:healthcare_360_mobile/ui/views/diabetes_prediction/diabetes_prediction_view.dart';
 import 'package:healthcare_360_mobile/ui/views/menu/menu_viewmodel.dart';
-import 'package:healthcare_360_mobile/ui/widgets/menu_tile.dart';
 
 class MenuView extends StatelessWidget {
   const MenuView({Key? key}) : super(key: key);
@@ -10,42 +12,41 @@ class MenuView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<MenuViewModel>(builder: (context, vm, child) {
       return BaseViewWidget(
-        avoidScrollView: true,
+        avoidScrollView: false,
         body: Column(
           children: [
             Image.asset(
               'assets/logo.png',
-              // scale: 0.25,
               height: 200,
             ),
             SizedBox(
               height: 25.h,
             ),
             const CustomText(
-              'Our Services',
+              'Our Healthcare Hubs',
               style: TextStyles.m_29,
               color: HcColors.purple,
             ),
             SizedBox(
               height: 25.h,
             ),
-            Expanded(
-              child: GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                      maxCrossAxisExtent: 200,
-                      // childAspectRatio: 3 / 2,
-                      crossAxisSpacing: 10,
-                      mainAxisSpacing: 10),
-                  itemCount: vm.ourServices.length,
-                  itemBuilder: (BuildContext ctx, index) {
-                    return InkWell(
-                        onTap: () {
-                          if (vm.ourServices[index].route.isNotEmpty) {
-                            Get.toNamed(vm.ourServices[index].route);
-                          }
-                        },
-                        child: MenuTile(service: vm.ourServices[index]));
-                  }),
+            Menu2Tile(
+              title: 'Diabetes',
+              subTitle: 'Detection & Prediction',
+              iconPath: 'assets/diabetes.svg',
+              action: () {
+                Get.to(() => const DiabetesPredictionView());
+              },
+            ),
+            Menu2Tile(
+              title: 'Cardio Vascular',
+              subTitle: 'Detection & Prediction &\nEstimation',
+              iconPath: 'assets/ecg-reading.svg',
+              iconHeight: 80,
+              color: HcColors.lightBlue,
+              action: () {
+                Get.to(() => const CardioVascularHub());
+              },
             ),
             SizedBox(
               height: 25.h,

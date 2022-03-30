@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.healthcare360.reliance.healthcare_360_mobile">
+    <uses-permission android:name="android.permission.INTERNET"/>
    <application
         android:label="Healthcare 360"
         android:name="${applicationName}"

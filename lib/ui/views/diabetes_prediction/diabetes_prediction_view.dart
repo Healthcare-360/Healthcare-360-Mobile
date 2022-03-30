@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:healthcare_360_mobile/ui/base_view/base_view.dart';
+import 'package:healthcare_360_mobile/ui/shared_widgets/center_tile.dart';
 import 'package:healthcare_360_mobile/ui/views/diabetes_prediction/diabetes_viewmodel.dart';
-import 'package:slide_to_act/slide_to_act.dart';
 
 class DiabetesPredictionView extends StatelessWidget {
-  DiabetesPredictionView({Key? key}) : super(key: key);
+  const DiabetesPredictionView({Key? key}) : super(key: key);
 
   void _showPicker(context, DiabetesViewModel model) {
     showModalBottomSheet(
@@ -36,7 +36,6 @@ class DiabetesPredictionView extends StatelessWidget {
         });
   }
 
-  final GlobalKey<SlideActionState> _key = GlobalKey();
   @override
   Widget build(BuildContext context) {
     final vm = context.watch<DiabetesViewModel>();
@@ -46,23 +45,34 @@ class DiabetesPredictionView extends StatelessWidget {
         children: <Widget>[
           const Spacer(),
           const Spacer(),
+
           Image.asset(
             'assets/logo.png',
-            height: 250,
+            height: 200,
+          ),
+          const SizedBox(
+            height: 20,
           ),
           const CustomText(
-            'Welcome to Diabetes Prediction Center',
+            'Welcome to Diabetes Hub',
             textAlign: TextAlign.center,
             color: HcColors.blue,
-            style: TextStyles.b_25,
+            style: TextStyles.b_20,
           ),
+          CustomText(
+            'Detection & Prediction',
+            textAlign: TextAlign.center,
+            color: HcColors.grey,
+            style: TextStyles.m_16,
+          ),
+
           SizedBox(
             height: 20.h,
           ),
           const CustomText(
             'We use Computer Vision to detect the Diabetes, by looking at the image of Retina. Our intelligent A.I System classifies and categorize the results for you',
             textAlign: TextAlign.center,
-            style: TextStyles.r_16,
+            style: TextStyles.r_14,
           ),
           SizedBox(
             height: 30.h,
@@ -72,18 +82,35 @@ class DiabetesPredictionView extends StatelessWidget {
                   color: Colors.white,
                   size: 50.0,
                 )
-              : SlideAction(
-                  key: _key,
-                  text: 'Get Started',
-                  outerColor: HcColors.blue,
-                  onSubmit: () {
+              : LargeCenterTile(
+                  title: 'Diabetes',
+                  subTitle: 'Let\'s Predict & Detect',
+                  iconPath: 'assets/icons/mobile-camera.svg',
+                  color: Colors.orange.shade100,
+                  action: () {
                     _showPicker(context, context.read<DiabetesViewModel>());
-                    Future.delayed(
-                      const Duration(seconds: 3),
-                      () => _key.currentState!.reset(),
-                    );
+                    //
+                    // Get.to(() => DiabetesPredictionView());
                   },
                 ),
+
+          // vm.loading
+          //     ? const SpinKitWanderingCubes(
+          //         color: Colors.white,
+          //         size: 50.0,
+          //       )
+          //     : SlideAction(
+          //         key: _key,
+          //         text: 'Get Started',
+          //         outerColor: HcColors.blue,
+          //         onSubmit: () {
+          //           _showPicker(context, context.read<DiabetesViewModel>());
+          //           Future.delayed(
+          //             const Duration(seconds: 3),
+          //             () => _key.currentState!.reset(),
+          //           );
+          //         },
+          //       ),
           const Spacer(),
 
           const Spacer(),
