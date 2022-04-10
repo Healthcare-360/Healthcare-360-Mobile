@@ -16,7 +16,7 @@ class DiabetesResultsView extends StatelessWidget {
             height: 30.h,
           ),
           const CustomText(
-            'Diabetes Prediction Center',
+            'Diabetes Detection Center',
             textAlign: TextAlign.center,
             color: HcColors.blue,
             style: TextStyles.b_25,
@@ -65,24 +65,6 @@ class DiabetesResultsView extends StatelessWidget {
             vm.results != null
                 ? 'Confidence: ${vm.results?.category?.score.toStringAsFixed(3)}'
                 : '',
-            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          const Text(
-            // ignore: unnecessary_null_comparison
-            'Current Diabetes Reading: ',
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w700,
-              letterSpacing: 0.5,
-              color: HcColors.purple,
-            ),
-          ),
-          Text(
-            // ignore: unnecessary_null_comparison
-            '${vm.generateDiabetesReading()} mg/dl',
             style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
           ),
           const SizedBox(

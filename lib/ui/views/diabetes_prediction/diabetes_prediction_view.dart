@@ -60,7 +60,7 @@ class DiabetesPredictionView extends StatelessWidget {
             style: TextStyles.b_20,
           ),
           CustomText(
-            'Detection & Prediction',
+            'Detection',
             textAlign: TextAlign.center,
             color: HcColors.grey,
             style: TextStyles.m_16,
@@ -84,7 +84,7 @@ class DiabetesPredictionView extends StatelessWidget {
                 )
               : LargeCenterTile(
                   title: 'Diabetes',
-                  subTitle: 'Let\'s Predict & Detect',
+                  subTitle: 'Let\'s Detect',
                   iconPath: 'assets/icons/mobile-camera.svg',
                   color: Colors.orange.shade100,
                   action: () {

@@ -32,20 +32,20 @@ class MenuView extends StatelessWidget {
             ),
             Menu2Tile(
               title: 'Diabetes',
-              subTitle: 'Detection & Prediction',
+              subTitle: 'Detection',
               iconPath: 'assets/diabetes.svg',
               action: () {
                 Get.to(() => const DiabetesPredictionView());
               },
             ),
             Menu2Tile(
-              title: 'Cardio Vascular',
-              subTitle: 'Detection & Prediction &\nEstimation',
+              title: 'Coming SOon',
+              subTitle: 'Coming Soon',
               iconPath: 'assets/ecg-reading.svg',
               iconHeight: 80,
               color: HcColors.lightBlue,
               action: () {
-                Get.to(() => const CardioVascularHub());
+                // Get.to(() => const CardioVascularHub());
               },
             ),
             SizedBox(
