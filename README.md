@@ -19,3 +19,19 @@ samples, guidance on mobile development, and a full API reference.
 - Blue Color
 - Menus
 - Drop Downs
+
+### Diabetes Detection
+- Blue Color
+- Menus
+- Drop Downs
+
+### MOdel
+- Blue Color
+- Menus
+- Drop Downs
+
+### Underlying Bio
+- Blue Color
+- Menus
+- Drop Downs
+
