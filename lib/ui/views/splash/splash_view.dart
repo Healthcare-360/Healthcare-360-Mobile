@@ -31,8 +31,9 @@ class _SplashViewState extends State<SplashView> {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Color(0xFF7474BF),
-              Color(0xFF348AC7),
+              Color(0xFF5662CE),
+              Color(0xFFAF54BB),
+              // Color(0xFFF83347),
             ]),
       ),
       child: CustomScrollView(

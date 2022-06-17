@@ -18,7 +18,7 @@ class ArrestsResultsView extends StatelessWidget {
           const CustomText(
             'Cardiac Arrest Prediction',
             textAlign: TextAlign.center,
-            color: HcColors.blue,
+            color: AppColors.blue,
             style: TextStyles.b_25,
           ),
           SizedBox(
@@ -54,7 +54,7 @@ class ArrestsResultsView extends StatelessWidget {
               fontSize: 20,
               fontWeight: FontWeight.w700,
               letterSpacing: 0.5,
-              color: HcColors.purple,
+              color: AppColors.purple,
             ),
           ),
           const SizedBox(

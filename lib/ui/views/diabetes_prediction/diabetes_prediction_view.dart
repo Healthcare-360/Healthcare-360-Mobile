@@ -56,13 +56,13 @@ class DiabetesPredictionView extends StatelessWidget {
           const CustomText(
             'Welcome to Diabetes Hub',
             textAlign: TextAlign.center,
-            color: HcColors.blue,
+            color: AppColors.blue,
             style: TextStyles.b_20,
           ),
           CustomText(
             'Detection',
             textAlign: TextAlign.center,
-            color: HcColors.grey,
+            color: AppColors.grey,
             style: TextStyles.m_16,
           ),
 

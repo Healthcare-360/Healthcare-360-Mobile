@@ -18,7 +18,7 @@ class MenuTile extends StatelessWidget {
           blurRadius: 15,
           offset: const Offset(0, 0), // changes position of shadow
         ),
-      ], color: HcColors.white, borderRadius: BorderRadius.circular(10)),
+      ], color: AppColors.white, borderRadius: BorderRadius.circular(10)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -31,7 +31,7 @@ class MenuTile extends StatelessWidget {
             service.title,
             textAlign: TextAlign.center,
             style: TextStyles.r_15.copyWith(
-              color: HcColors.blue,
+              color: AppColors.blue,
               height: 1,
             ),
           )

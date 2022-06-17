@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
-class HcColors {
+class AppColors {
   // static const purple = Color(0xFF7474BF);
-  static const blue = Color(0xFF041b3a);
-  static const purple = Color(0xFFf7a309);
+  static const blue = Color(0xFF091930);
+  static const purple = Color(0xFFCC0033);
+
+//  static const blue = Color(0xFF041b3a);
+//   static const purple = Color(0xFFf7a309);
 
   // static const blue = Color(0xFF348AC7);
   static const white = Color(0xFFFFFFFF);

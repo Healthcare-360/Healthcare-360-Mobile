@@ -20,7 +20,7 @@ class CustomText extends StatelessWidget {
         text ?? '',
         textAlign: textAlign ?? TextAlign.left,
         style: TextStyles.retTextStyle(
-            style ?? TextStyles.r_18, color ?? HcColors.black),
+            style ?? TextStyles.r_18, color ?? AppColors.black),
       ),
     );
   }

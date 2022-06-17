@@ -117,7 +117,7 @@ class CardioVascularHub extends StatelessWidget {
           const CustomText(
             'Welcome to\nCardio Vascular Hub',
             textAlign: TextAlign.center,
-            color: HcColors.blue,
+            color: AppColors.blue,
             style: TextStyles.b_20,
           ),
           const SizedBox(
@@ -126,7 +126,7 @@ class CardioVascularHub extends StatelessWidget {
           CustomText(
             'Detection & Prediction',
             textAlign: TextAlign.center,
-            color: HcColors.grey,
+            color: AppColors.grey,
             style: TextStyles.m_16,
           ),
           SizedBox(
@@ -142,7 +142,7 @@ class CardioVascularHub extends StatelessWidget {
           ),
           vm.loading
               ? const SpinKitWanderingCubes(
-                  color: HcColors.purple,
+                  color: AppColors.purple,
                   size: 50.0,
                 )
               : LargeCenterTile(
@@ -150,7 +150,7 @@ class CardioVascularHub extends StatelessWidget {
                   subTitle: 'Let\'s Predict',
                   iconPath: 'assets/1.svg',
                   iconHeight: 90,
-                  color: HcColors.lightPink,
+                  color: AppColors.lightPink,
                   action: () {
                     _showPicker(
                         context, context.read<CardioVascularViewModel>());
@@ -158,7 +158,7 @@ class CardioVascularHub extends StatelessWidget {
                 ),
           vm.loading2
               ? const SpinKitWanderingCubes(
-                  color: HcColors.purple,
+                  color: AppColors.purple,
                   size: 50.0,
                 )
               : LargeCenterTile(
@@ -174,7 +174,7 @@ class CardioVascularHub extends StatelessWidget {
                 ),
           vm.loading2
               ? const SpinKitWanderingCubes(
-                  color: HcColors.purple,
+                  color: AppColors.purple,
                   size: 50.0,
                 )
               : LargeCenterTile(
@@ -182,7 +182,7 @@ class CardioVascularHub extends StatelessWidget {
                   subTitle: 'Let\'s Detect',
                   iconPath: 'assets/3.svg',
                   iconHeight: 80,
-                  color: HcColors.lightBlue,
+                  color: AppColors.lightBlue,
                   action: () {
                     _showBPPicker(
                         context, context.read<CardioVascularViewModel>());

@@ -17,6 +17,8 @@ export '../../core/others/illustrations.dart';
 export '../../core/others/icons.dart';
 export 'dart:developer';
 
+export '../../core/others/animations.dart';
+
 class BaseViewWidget extends StatelessWidget {
   final AppBar? appBar;
   final bool avoidScrollView;

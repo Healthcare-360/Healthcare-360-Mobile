@@ -16,7 +16,7 @@ class BloodPressureResultsView extends StatelessWidget {
           const CustomText(
             'Blood Pressure Prediction',
             textAlign: TextAlign.center,
-            color: HcColors.blue,
+            color: AppColors.blue,
             style: TextStyles.b_25,
           ),
           SizedBox(
@@ -41,7 +41,7 @@ class BloodPressureResultsView extends StatelessWidget {
             'Max Chances',
             textAlign: TextAlign.center,
             style: TextStyles.m_18,
-            color: HcColors.purple,
+            color: AppColors.purple,
           ),
           SizedBox(
             height: 15.h,
@@ -53,7 +53,7 @@ class BloodPressureResultsView extends StatelessWidget {
               fontSize: 20,
               fontWeight: FontWeight.w700,
               letterSpacing: 0.5,
-              color: HcColors.grey,
+              color: AppColors.grey,
             ),
           ),
           const SizedBox(
@@ -66,7 +66,7 @@ class BloodPressureResultsView extends StatelessWidget {
               fontSize: 20,
               fontWeight: FontWeight.w700,
               letterSpacing: 0.5,
-              color: HcColors.grey,
+              color: AppColors.grey,
             ),
           ),
           const Spacer(),

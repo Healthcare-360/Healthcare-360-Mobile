@@ -18,7 +18,7 @@ class AttackResultsView extends StatelessWidget {
           const CustomText(
             'Heart Attack Prediction',
             textAlign: TextAlign.center,
-            color: HcColors.blue,
+            color: AppColors.blue,
             style: TextStyles.b_25,
           ),
           SizedBox(
@@ -55,7 +55,7 @@ class AttackResultsView extends StatelessWidget {
               fontSize: 20,
               fontWeight: FontWeight.w700,
               letterSpacing: 0.5,
-              color: HcColors.purple,
+              color: AppColors.purple,
             ),
           ),
           const SizedBox(

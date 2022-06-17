@@ -9,6 +9,8 @@ class Menu2Tile extends StatelessWidget {
   final String iconPath;
   final double? iconHeight;
   final Color? color;
+  final Color? iconColor;
+
   const Menu2Tile(
       {Key? key,
       required this.title,
@@ -16,7 +18,8 @@ class Menu2Tile extends StatelessWidget {
       this.action,
       required this.iconPath,
       this.color,
-      this.iconHeight})
+      this.iconHeight,
+      this.iconColor})
       : super(key: key);
 
   @override
@@ -25,6 +28,7 @@ class Menu2Tile extends StatelessWidget {
       onTap: action,
       child: Container(
           // height: 200,
+          // width: 300,
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 40),
           margin: const EdgeInsets.only(bottom: 10),
           decoration: BoxDecoration(
@@ -57,6 +61,7 @@ class Menu2Tile extends StatelessWidget {
               SvgPicture.asset(
                 iconPath,
                 height: iconHeight ?? 100,
+                color: iconColor,
               ),
             ],
           )),
