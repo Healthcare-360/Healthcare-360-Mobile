@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:healthcare_360_mobile/ui/base_view/base_view.dart';
+import 'package:healthcare_360_mobile/ui/views/retinal_hub/ocular_diseases/ocular_disease_viewmodel.dart';
+import 'package:healthcare_360_mobile/ui/views/retinal_hub/retinopathy/retinopathy_viewmodel.dart';
 
 import '../../shared_widgets/menu_tile.dart';
 import 'diabetes/diabetes_viewmodel.dart';
@@ -91,42 +93,28 @@ class RetinaHubView extends StatelessWidget {
                     // Get.to(() => DiabetesPredictionView());
                   },
                 ),
-          vm.loading
-              ? const SpinKitWanderingCubes(
-                  color: Colors.white,
-                  size: 50.0,
-                )
-              : Menu2Tile(
-                  preHead: 'Retinal Hub',
-                  title: 'Diabetic Retinopathy',
-                  subTitle: 'Let\'s Detect',
-                  iconPath: AppIcons.retinoPathy,
-                  iconHeight: 70,
-                  color: const Color(0xFF0B9B97).withOpacity(0.08),
-                  action: () {
-                    _showPicker(context, context.read<DiabetesViewModel>());
-                    //
-                    // Get.to(() => DiabetesPredictionView());
-                  },
-                ),
-          vm.loading
-              ? const SpinKitWanderingCubes(
-                  color: Colors.white,
-                  size: 50.0,
-                )
-              : Menu2Tile(
-                  preHead: 'Retinal Hub',
-                  title: 'Ocular Diseases',
-                  subTitle: 'Let\'s Detect',
-                  iconPath: AppIcons.ocular,
-                  iconHeight: 60,
-                  color: const Color(0xFF5A87F2).withOpacity(0.12),
-                  action: () {
-                    _showPicker(context, context.read<DiabetesViewModel>());
-                    //
-                    // Get.to(() => DiabetesPredictionView());
-                  },
-                ),
+          Menu2Tile(
+            preHead: 'Retinal Hub',
+            title: 'Diabetic Retinopathy',
+            subTitle: 'Let\'s Detect',
+            iconPath: AppIcons.retinoPathy,
+            iconHeight: 70,
+            color: const Color(0xFF0B9B97).withOpacity(0.08),
+            action: () {
+              context.read<RetinopathyViewModel>().showPicker(context);
+            },
+          ),
+          Menu2Tile(
+            preHead: 'Retinal Hub',
+            title: 'Ocular Diseases',
+            subTitle: 'Let\'s Detect',
+            iconPath: AppIcons.ocular,
+            iconHeight: 60,
+            color: const Color(0xFF5A87F2).withOpacity(0.12),
+            action: () {
+              context.read<OcularDiseaseViewModel>().showPicker(context);
+            },
+          ),
           const Spacer(),
           const Spacer(),
           const SizedBox(

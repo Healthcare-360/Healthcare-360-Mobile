@@ -2,7 +2,7 @@ import 'dart:io';
 import 'dart:math';
 
 import 'package:flutter/foundation.dart' as notify;
-import 'package:healthcare_360_mobile/core/models/diabetes_model.dart';
+import 'package:healthcare_360_mobile/core/models/retinal_models/diabetes_model.dart';
 import 'package:healthcare_360_mobile/core/models/tflite_return_model.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:image/image.dart' as img;
