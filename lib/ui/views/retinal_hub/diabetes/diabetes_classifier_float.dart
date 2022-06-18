@@ -1,5 +1,6 @@
-import 'package:healthcare_360_mobile/ui/views/diabetes_prediction/diabetes_classifer.dart';
 import 'package:tflite_flutter_helper/tflite_flutter_helper.dart';
+
+import 'diabetes_classifer.dart';
 
 class DiabetesClassifierFloat extends DiabetesClassifier {
   DiabetesClassifierFloat({int? numThreads}) : super(numThreads: numThreads);

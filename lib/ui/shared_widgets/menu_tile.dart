@@ -7,6 +7,7 @@ class Menu2Tile extends StatelessWidget {
   final String subTitle;
   final VoidCallback? action;
   final String iconPath;
+  final String? preHead;
   final double? iconHeight;
   final Color? color;
   final Color? iconColor;
@@ -15,6 +16,7 @@ class Menu2Tile extends StatelessWidget {
       {Key? key,
       required this.title,
       required this.subTitle,
+      this.preHead,
       this.action,
       required this.iconPath,
       this.color,
@@ -38,25 +40,27 @@ class Menu2Tile extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  CustomText(
-                    'HUB',
-                    style: TextStyles.m_15,
-                    color: Colors.grey.shade600,
-                  ),
-                  CustomText(
-                    title,
-                    style: TextStyles.b_20,
-                  ),
-                  CustomText(
-                    subTitle,
-                    style: TextStyles.r_14,
-                    color: Colors.grey.shade700,
-                  ),
-                ],
+              Flexible(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CustomText(
+                      preHead ?? 'HUB',
+                      style: TextStyles.m_15,
+                      color: Colors.grey.shade600,
+                    ),
+                    CustomText(
+                      title,
+                      style: TextStyles.b_20,
+                    ),
+                    CustomText(
+                      subTitle,
+                      style: TextStyles.r_14,
+                      color: Colors.grey.shade700,
+                    ),
+                  ],
+                ),
               ),
               SvgPicture.asset(
                 iconPath,

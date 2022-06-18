@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:healthcare_360_mobile/ui/base_view/base_view.dart';
-import 'package:healthcare_360_mobile/ui/views/diabetes_prediction/diabetes_viewmodel.dart';
+
+import 'diabetes_viewmodel.dart';
 
 class DiabetesResultsView extends StatelessWidget {
   const DiabetesResultsView({Key? key}) : super(key: key);

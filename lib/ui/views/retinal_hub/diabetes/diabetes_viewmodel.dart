@@ -4,13 +4,13 @@ import 'dart:math';
 import 'package:flutter/foundation.dart' as notify;
 import 'package:healthcare_360_mobile/core/models/diabetes_model.dart';
 import 'package:healthcare_360_mobile/core/models/tflite_return_model.dart';
-import 'package:healthcare_360_mobile/ui/views/diabetes_prediction/diabetes_classifier_float.dart';
-import 'package:healthcare_360_mobile/ui/views/diabetes_prediction/diabetes_results_view.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:image/image.dart' as img;
 import 'package:tflite_flutter_helper/tflite_flutter_helper.dart';
 import 'package:get/get.dart';
 import 'diabetes_classifer.dart';
+import 'diabetes_classifier_float.dart';
+import 'diabetes_results_view.dart';
 
 class DiabetesViewModel with notify.ChangeNotifier {
   bool _loading = false;
