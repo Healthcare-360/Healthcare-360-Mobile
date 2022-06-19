@@ -64,7 +64,7 @@ class DiabetesResultsView extends StatelessWidget {
           Text(
             // ignore: unnecessary_null_comparison
             vm.results != null
-                ? 'Confidence: ${vm.results?.category?.score.toStringAsFixed(3)}'
+                ? 'Confidence: ${((vm.results?.category?.score)! * 100).toStringAsFixed(2)}%'
                 : '',
             style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
           ),

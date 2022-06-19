@@ -1,16 +1,21 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:healthcare_360_mobile/ui/base_view/base_view.dart';
-import 'package:healthcare_360_mobile/ui/cardio/cardio_vascular_viewmodel.dart';
 import 'package:healthcare_360_mobile/ui/root/root.dart';
-import 'package:healthcare_360_mobile/ui/views/cancer_hub/cancer_viewmodel.dart';
+import 'package:healthcare_360_mobile/ui/views/cancer_hub/cervical_cancer/cervical_viewmodel.dart';
+import 'package:healthcare_360_mobile/ui/views/cancer_hub/lymphoma/lymphoma_viewmodel.dart';
 import 'package:healthcare_360_mobile/ui/views/cardiac_hub/heart_disease/heart_disease_viewmodel.dart';
 import 'package:healthcare_360_mobile/ui/views/chatbot_hub/chatbot_viewmodel.dart';
 import 'package:healthcare_360_mobile/ui/views/emr_hub/emr_viewmodel.dart';
-import 'package:healthcare_360_mobile/ui/views/environment_hub/environment_hub_viewmodel.dart';
+import 'package:healthcare_360_mobile/ui/views/environment_hub/air_cognizer/cognizer_viewmodel.dart';
 import 'package:healthcare_360_mobile/ui/views/malaria_hub/malaria_viewmodel.dart';
 import 'package:healthcare_360_mobile/ui/views/menu/menu_viewmodel.dart';
-import 'package:healthcare_360_mobile/ui/views/radiology_hub/radiology_viewmodel.dart';
+import 'package:healthcare_360_mobile/ui/views/radiology_hub/covid_19/cov_viewmodel.dart';
+import 'package:healthcare_360_mobile/ui/views/radiology_hub/pneumonia/pneumona_viewmodel.dart';
+import 'package:healthcare_360_mobile/ui/views/radiology_hub/thorax_diseases/thorax_viewmodel.dart';
+import 'package:healthcare_360_mobile/ui/views/radiology_hub/tuberculosis/tuberculosis_viewmodel.dart';
 import 'package:healthcare_360_mobile/ui/views/retinal_hub/ocular_diseases/ocular_disease_viewmodel.dart';
 import 'package:healthcare_360_mobile/ui/views/retinal_hub/retina_hub_view.dart';
 import 'package:healthcare_360_mobile/ui/views/retinal_hub/diabetes/diabetes_viewmodel.dart';
@@ -34,9 +39,9 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => MenuViewModel()),
-        ChangeNotifierProvider(create: (_) => RadiologyViewModel()),
-        ChangeNotifierProvider(create: (_) => EnvironmentViewModel()),
-        ChangeNotifierProvider(create: (_) => CancerViewModel()),
+        ChangeNotifierProvider(create: (_) => CognizerViewModel()),
+        ChangeNotifierProvider(create: (_) => CervicalViewModel()),
+        ChangeNotifierProvider(create: (_) => LymphomaViewModel()),
         ChangeNotifierProvider(create: (_) => DiabetesViewModel()),
         ChangeNotifierProvider(create: (_) => HeartDiseaseViewModel()),
         ChangeNotifierProvider(create: (_) => ChatBotViewModel()),
@@ -44,13 +49,22 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => MalariaViewModel()),
         ChangeNotifierProvider(create: (_) => RetinopathyViewModel()),
         ChangeNotifierProvider(create: (_) => OcularDiseaseViewModel()),
-        ChangeNotifierProvider(create: (_) => CardioVascularViewModel()),
+        ChangeNotifierProvider(create: (_) => CovViewModel()),
+        ChangeNotifierProvider(create: (_) => PneumoniaViewModel()),
+        ChangeNotifierProvider(create: (_) => ThoraxViewModel()),
+        ChangeNotifierProvider(create: (_) => TuberculosisViewModel()),
       ],
       child: ScreenUtilInit(
         designSize: const Size(375, 812),
         builder: () {
           return GetMaterialApp(
-            theme: ThemeData(fontFamily: 'poppins'),
+            theme: ThemeData(
+                fontFamily: 'poppins',
+                buttonColor: AppColors.purple,
+                elevatedButtonTheme: ElevatedButtonThemeData(
+                    style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all(AppColors.purple)))),
             initialRoute: '/',
             debugShowCheckedModeBanner: false,
             getPages: [

@@ -1,14 +1,49 @@
 import 'package:flutter/material.dart';
+import 'package:healthcare_360_mobile/core/utilities/check_internet.dart';
 import 'package:healthcare_360_mobile/ui/base_view/base_view.dart';
 import 'package:healthcare_360_mobile/ui/shared_widgets/menu_tile.dart';
+import 'package:healthcare_360_mobile/ui/views/cancer_hub/cancer_hub_view.dart';
+import 'package:healthcare_360_mobile/ui/views/chatbot_hub/chatbot_view.dart';
+import 'package:healthcare_360_mobile/ui/views/environment_hub/environment_hub_view.dart';
+import 'package:healthcare_360_mobile/ui/views/malaria_hub/malaria_hub_view.dart';
 import 'package:healthcare_360_mobile/ui/views/menu/menu_viewmodel.dart';
 import 'package:healthcare_360_mobile/ui/views/radiology_hub/radiology_hub_view.dart';
 import 'package:healthcare_360_mobile/ui/views/retinal_hub/retina_hub_view.dart';
-import 'package:lottie/lottie.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:material_dialogs/material_dialogs.dart';
 
-class MenuView extends StatelessWidget {
+class MenuView extends StatefulWidget {
   const MenuView({Key? key}) : super(key: key);
+
+  @override
+  State<MenuView> createState() => _MenuViewState();
+}
+
+class _MenuViewState extends State<MenuView> {
+  _showDialog() {
+    Dialogs.materialDialog(
+        titleAlign: TextAlign.center,
+        msgAlign: TextAlign.center,
+        color: Colors.white,
+        msg: 'This feature requires internet connection',
+        title: 'No Internet Connection',
+        lottieBuilder: LottieBuilder.asset(AppAnimations.noInternet),
+        context: context,
+        actions: [
+          ElevatedButton.icon(
+              onPressed: () {
+                Get.back();
+              },
+              icon: const Icon(
+                Icons.cancel,
+                color: AppColors.white,
+              ),
+              label: const CustomText(
+                'Cancel',
+                color: AppColors.white,
+              ))
+        ]);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +98,13 @@ class MenuView extends StatelessWidget {
               iconColor: const Color(0xFFF92C3D),
               color: const Color(0xFFFE4655).withOpacity(0.12),
               action: () {
-                // Get.to(() => const CardioVascularHub());
+                CheckInternet.check().then((status) {
+                  if (status == InternetStatus.connected) {
+                    Get.to(() => const ChatBotView());
+                  } else if (status == InternetStatus.notConnected) {
+                    _showDialog();
+                  }
+                });
               },
             ),
 
@@ -98,7 +139,7 @@ class MenuView extends StatelessWidget {
               iconColor: const Color.fromARGB(255, 151, 200, 85),
               color: const Color(0xFFCF9F76).withOpacity(0.12),
               action: () {
-                // Get.to(() => const CardioVascularHub());
+                Get.to(() => const EnvironmentHubView());
               },
             ),
             Menu2Tile(
@@ -108,7 +149,7 @@ class MenuView extends StatelessWidget {
               iconHeight: 70,
               color: const Color(0xFFe45363).withOpacity(0.1),
               action: () {
-                // Get.to(() => const CardioVascularHub());
+                Get.to(() => const CancerHubView());
               },
             ),
 
@@ -130,7 +171,7 @@ class MenuView extends StatelessWidget {
               iconHeight: 70,
               color: const Color(0xFFCE2A55).withOpacity(0.1),
               action: () {
-                // Get.to(() => const CardioVascularHub());
+                Get.to(() => const MalariaHubView());
               },
             ),
 

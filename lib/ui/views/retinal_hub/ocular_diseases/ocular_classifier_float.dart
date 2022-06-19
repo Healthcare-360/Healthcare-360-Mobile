@@ -1,8 +1,8 @@
 import 'package:healthcare_360_mobile/core/ai_models/app_models.dart';
-import 'package:healthcare_360_mobile/ui/views/retinal_hub/retinopathy/retinopathy_classifier.dart';
+import 'package:healthcare_360_mobile/ui/views/retinal_hub/ocular_diseases/ocular_classifier.dart';
 import 'package:tflite_flutter_helper/tflite_flutter_helper.dart';
 
-class OcularClassifierFloat extends RetinopathyClassifer {
+class OcularClassifierFloat extends OcularClassifier {
   OcularClassifierFloat({int? numThreads}) : super(numThreads: numThreads);
 
   @override

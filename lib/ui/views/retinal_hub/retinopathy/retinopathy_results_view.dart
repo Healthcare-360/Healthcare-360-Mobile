@@ -11,6 +11,7 @@ class RetinopathyResultsView extends StatelessWidget {
     return BaseViewWidget(
       avoidScrollView: false,
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           SizedBox(
             height: 30.h,
@@ -50,6 +51,7 @@ class RetinopathyResultsView extends StatelessWidget {
           Text(
             // ignore: unnecessary_null_comparison
             vm.results != null ? vm.results!.category!.label : '',
+            textAlign: TextAlign.center,
             style: const TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.w700,
@@ -63,7 +65,7 @@ class RetinopathyResultsView extends StatelessWidget {
           Text(
             // ignore: unnecessary_null_comparison
             vm.results != null
-                ? 'Confidence: ${vm.results?.category?.score.toStringAsFixed(3)}'
+                ? 'Confidence: ${((vm.results?.category?.score)! * 100).toStringAsFixed(2)}%'
                 : '',
             style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
           ),

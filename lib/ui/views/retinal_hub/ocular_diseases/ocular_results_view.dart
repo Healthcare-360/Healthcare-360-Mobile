@@ -50,6 +50,7 @@ class OcularResultsView extends StatelessWidget {
           Text(
             // ignore: unnecessary_null_comparison
             vm.results != null ? vm.results!.category!.label : '',
+            textAlign: TextAlign.center,
             style: const TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.w700,
@@ -63,8 +64,10 @@ class OcularResultsView extends StatelessWidget {
           Text(
             // ignore: unnecessary_null_comparison
             vm.results != null
-                ? 'Confidence: ${vm.results?.category?.score.toStringAsFixed(3)}'
+                ? 'Confidence: ${((vm.results?.category?.score)! * 100).toStringAsFixed(2)}%'
                 : '',
+            textAlign: TextAlign.center,
+
             style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
           ),
           const SizedBox(
@@ -88,36 +91,50 @@ class OcularResultsView extends StatelessWidget {
           Text(
             // ignore: unnecessary_null_comparison
             'AMD (Age-related macular degeneration): ${vm.ocularDiseasesReults?.amd?.toStringAsFixed(3)}',
+            textAlign: TextAlign.center,
+
             style: const TextStyle(fontSize: 14),
           ),
           Text(
             // ignore: unnecessary_null_comparison
             'Cataract: ${vm.ocularDiseasesReults?.cataract?.toStringAsFixed(3)}',
+            textAlign: TextAlign.center,
+
             style: const TextStyle(fontSize: 14),
           ),
           Text(
             // ignore: unnecessary_null_comparison
             'Glaucoma: ${vm.ocularDiseasesReults?.glaucoma?.toStringAsFixed(3)}',
+            textAlign: TextAlign.center,
+
             style: const TextStyle(fontSize: 14),
           ),
           Text(
             // ignore: unnecessary_null_comparison
             'Hypertension: ${vm.ocularDiseasesReults?.hypertension?.toStringAsFixed(3)}',
+            textAlign: TextAlign.center,
+
             style: const TextStyle(fontSize: 14),
           ),
           Text(
             // ignore: unnecessary_null_comparison
             'Myopia: ${vm.ocularDiseasesReults?.myopia?.toStringAsFixed(3)}',
+            textAlign: TextAlign.center,
+
             style: const TextStyle(fontSize: 14),
           ),
           Text(
             // ignore: unnecessary_null_comparison
             'Normal Eye: ${vm.ocularDiseasesReults?.normal?.toStringAsFixed(3)}',
+            textAlign: TextAlign.center,
+
             style: const TextStyle(fontSize: 14),
           ),
           Text(
             // ignore: unnecessary_null_comparison
             'Minor Diseases: ${vm.ocularDiseasesReults?.minor?.toStringAsFixed(3)}',
+            textAlign: TextAlign.center,
+
             style: const TextStyle(fontSize: 14),
           ),
           SizedBox(

@@ -47,10 +47,11 @@ class RetinaHubView extends StatelessWidget {
       body: Column(
         children: <Widget>[
           const Spacer(),
+
           const Spacer(),
           // const HeaderWidget(),
           const SizedBox(
-            height: 20,
+            height: 100,
           ),
           const CustomText(
             'Welcome to Retinal Hub',
@@ -115,7 +116,6 @@ class RetinaHubView extends StatelessWidget {
               context.read<OcularDiseaseViewModel>().showPicker(context);
             },
           ),
-          const Spacer(),
           const Spacer(),
           const SizedBox(
             height: 36,

@@ -67,6 +67,7 @@ class BaseViewWidget extends StatelessWidget {
                 child: avoidScrollView
                     ? body
                     : CustomScrollView(
+                        physics: const BouncingScrollPhysics(),
                         slivers: [
                           SliverFillRemaining(
                             hasScrollBody: false,
@@ -92,6 +93,7 @@ class BaseViewWidget extends StatelessWidget {
                 child: avoidScrollView
                     ? body
                     : CustomScrollView(
+                        physics: const BouncingScrollPhysics(),
                         slivers: [
                           SliverFillRemaining(
                             hasScrollBody: false,

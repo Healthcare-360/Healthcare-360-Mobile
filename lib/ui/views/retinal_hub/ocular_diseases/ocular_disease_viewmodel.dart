@@ -3,9 +3,9 @@ import 'package:flutter/foundation.dart' as notify;
 import 'package:flutter/material.dart';
 import 'package:healthcare_360_mobile/core/models/retinal_models/ocular_model.dart';
 import 'package:healthcare_360_mobile/core/models/tflite_return_model.dart';
+import 'package:healthcare_360_mobile/ui/views/retinal_hub/ocular_diseases/ocular_classifier.dart';
+import 'package:healthcare_360_mobile/ui/views/retinal_hub/ocular_diseases/ocular_classifier_float.dart';
 import 'package:healthcare_360_mobile/ui/views/retinal_hub/ocular_diseases/ocular_results_view.dart';
-import 'package:healthcare_360_mobile/ui/views/retinal_hub/retinopathy/retinopathy_classifer_float.dart';
-import 'package:healthcare_360_mobile/ui/views/retinal_hub/retinopathy/retinopathy_classifier.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:image/image.dart' as img;
 import 'package:tflite_flutter_helper/tflite_flutter_helper.dart';
@@ -50,8 +50,8 @@ class OcularDiseaseViewModel with notify.ChangeNotifier {
   }
 
   // ignore: prefer_final_fields
-  RetinopathyClassifer _classifier = RetinopathyClassiferFloat();
-  RetinopathyClassifer get classifier => _classifier;
+  OcularClassifier _classifier = OcularClassifierFloat();
+  OcularClassifier get classifier => _classifier;
 
   Category? _category;
   Category? get category => _category;
