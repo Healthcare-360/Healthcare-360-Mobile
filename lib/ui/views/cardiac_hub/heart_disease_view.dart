@@ -5,14 +5,14 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:healthcare_360_mobile/ui/base_view/base_view.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-class ChatBotView extends StatefulWidget {
-  const ChatBotView({Key? key}) : super(key: key);
+class HeartDiseaseView extends StatefulWidget {
+  const HeartDiseaseView({Key? key}) : super(key: key);
 
   @override
-  State<ChatBotView> createState() => _ChatBotViewState();
+  State<HeartDiseaseView> createState() => _HeartDiseaseViewState();
 }
 
-class _ChatBotViewState extends State<ChatBotView> {
+class _HeartDiseaseViewState extends State<HeartDiseaseView> {
   bool _isLoad = false;
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class _ChatBotViewState extends State<ChatBotView> {
       appBar: AppBar(
         backgroundColor: AppColors.purple,
         title: const CustomText(
-          'Healthcare ChatBot',
+          'AQI Levels Searcher',
           color: AppColors.white,
         ),
         centerTitle: true,
@@ -58,7 +58,7 @@ class _ChatBotViewState extends State<ChatBotView> {
           children: [
             WebView(
               javascriptMode: JavascriptMode.unrestricted,
-              initialUrl: Links.healthbot,
+              initialUrl: Links.heartDisease,
               onWebViewCreated: (WebViewController cont) {
                 log('WebView Created');
                 setState(() {

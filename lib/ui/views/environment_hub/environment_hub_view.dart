@@ -1,11 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:healthcare_360_mobile/ui/base_view/base_view.dart';
 import 'package:healthcare_360_mobile/ui/views/environment_hub/air_cognizer/cognizer_viewmodel.dart';
+import 'package:healthcare_360_mobile/ui/views/environment_hub/aqi_levels/aqi_levels_searcher_view.dart';
+import 'package:material_dialogs/material_dialogs.dart';
 
+import '../../../core/utilities/check_internet.dart';
 import '../../shared_widgets/menu_tile.dart';
 
 class EnvironmentHubView extends StatelessWidget {
   const EnvironmentHubView({Key? key}) : super(key: key);
+
+  _showDialog(context) {
+    Dialogs.materialDialog(
+        titleAlign: TextAlign.center,
+        msgAlign: TextAlign.center,
+        color: Colors.white,
+        msg: 'This feature requires internet connection',
+        title: 'No Internet Connection',
+        lottieBuilder: LottieBuilder.asset(AppAnimations.noInternet),
+        context: context,
+        actions: [
+          ElevatedButton.icon(
+              onPressed: () {
+                Get.back();
+              },
+              icon: const Icon(
+                Icons.cancel,
+                color: AppColors.white,
+              ),
+              label: const CustomText(
+                'Cancel',
+                color: AppColors.white,
+              ))
+        ]);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +42,7 @@ class EnvironmentHubView extends StatelessWidget {
       body: Column(
         children: <Widget>[
           const Spacer(),
-          // const HeaderWidget(),
+          const HeaderWidget(),
           const SizedBox(
             height: 20,
           ),
@@ -48,7 +76,15 @@ class EnvironmentHubView extends StatelessWidget {
             iconPath: AppIcons.aqiLevels,
             color: const Color(0xFF5EAA46).withOpacity(0.1),
             iconHeight: 60,
-            action: () {},
+            action: () {
+              CheckInternet.check().then((status) {
+                if (status == InternetStatus.connected) {
+                  Get.to(() => const AqiLevelsSearcherView());
+                } else if (status == InternetStatus.notConnected) {
+                  _showDialog(context);
+                }
+              });
+            },
           ),
           Menu2Tile(
             preHead: 'Environment Hub',

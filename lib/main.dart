@@ -6,8 +6,6 @@ import 'package:healthcare_360_mobile/ui/base_view/base_view.dart';
 import 'package:healthcare_360_mobile/ui/root/root.dart';
 import 'package:healthcare_360_mobile/ui/views/cancer_hub/cervical_cancer/cervical_viewmodel.dart';
 import 'package:healthcare_360_mobile/ui/views/cancer_hub/lymphoma/lymphoma_viewmodel.dart';
-import 'package:healthcare_360_mobile/ui/views/cardiac_hub/heart_disease/heart_disease_viewmodel.dart';
-import 'package:healthcare_360_mobile/ui/views/chatbot_hub/chatbot_viewmodel.dart';
 import 'package:healthcare_360_mobile/ui/views/emr_hub/emr_viewmodel.dart';
 import 'package:healthcare_360_mobile/ui/views/environment_hub/air_cognizer/cognizer_viewmodel.dart';
 import 'package:healthcare_360_mobile/ui/views/malaria_hub/malaria_viewmodel.dart';
@@ -43,8 +41,6 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => CervicalViewModel()),
         ChangeNotifierProvider(create: (_) => LymphomaViewModel()),
         ChangeNotifierProvider(create: (_) => DiabetesViewModel()),
-        ChangeNotifierProvider(create: (_) => HeartDiseaseViewModel()),
-        ChangeNotifierProvider(create: (_) => ChatBotViewModel()),
         ChangeNotifierProvider(create: (_) => EmrViewmodel()),
         ChangeNotifierProvider(create: (_) => MalariaViewModel()),
         ChangeNotifierProvider(create: (_) => RetinopathyViewModel()),

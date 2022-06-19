@@ -14,7 +14,10 @@ class OnboardingView extends StatelessWidget {
       image: Center(
           child: Container(
               margin: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
-              child: SvgPicture.asset(HcIllustrations.ob1))),
+              child: SvgPicture.asset(
+                HcIllustrations.ob1,
+                color: AppColors.purple,
+              ))),
       decoration: PageDecoration(
         imagePadding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w),
         titlePadding: const EdgeInsets.only(top: 0, bottom: 24.0),

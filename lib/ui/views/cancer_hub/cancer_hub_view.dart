@@ -15,7 +15,7 @@ class CancerHubView extends StatelessWidget {
       body: Column(
         children: <Widget>[
           const Spacer(),
-          // const HeaderWidget(),
+          const HeaderWidget(),
           const SizedBox(
             height: 20,
           ),
@@ -53,7 +53,6 @@ class CancerHubView extends StatelessWidget {
               context.read<CervicalViewModel>().showPicker(context);
             },
           ),
-
           Menu2Tile(
             title: 'Lymphoma',
             preHead: 'Cancer Hub',

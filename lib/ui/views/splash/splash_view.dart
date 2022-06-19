@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 import 'package:healthcare_360_mobile/ui/base_view/base_view.dart';
+import 'package:healthcare_360_mobile/ui/views/menu/menu_view.dart';
 import 'package:healthcare_360_mobile/ui/views/onboarding/onboarding_view.dart';
+import 'package:lottie/lottie.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({Key? key}) : super(key: key);
@@ -12,8 +15,9 @@ class SplashView extends StatefulWidget {
 
 class _SplashViewState extends State<SplashView> {
   _waitAndNavigate() async {
-    await Future.delayed(const Duration(seconds: 1));
-    Get.offAll(() => OnboardingView());
+    await Future.delayed(const Duration(seconds: 4));
+    // Get.offAll(() => OnboardingView());
+    Get.offAll(() => const MenuView());
   }
 
   @override
@@ -25,30 +29,47 @@ class _SplashViewState extends State<SplashView> {
   @override
   Widget build(BuildContext context) {
     // ignore: avoid_unnecessary_containers
-    return Container(
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Color(0xFF5662CE),
-              Color(0xFFAF54BB),
-              // Color(0xFFF83347),
-            ]),
-      ),
-      child: CustomScrollView(
-        slivers: [
-          SliverFillRemaining(
-            hasScrollBody: false,
-            child: Column(
-              children: [
-                const Spacer(),
-                Image.asset('assets/logo.png'),
-                const Spacer(),
-              ],
+    return SafeArea(
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.grey.shade200,
+        ),
+        child: CustomScrollView(
+          slivers: [
+            SliverFillRemaining(
+              hasScrollBody: false,
+              child: Column(
+                children: [
+                  const Spacer(),
+                  Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      LottieBuilder.asset(
+                        AppAnimations.background,
+                      ),
+                      Align(
+                        alignment: Alignment.center,
+                        child: Image.asset(
+                          AppIcons.logo,
+                          height: 250,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const Spacer(),
+                  const SizedBox(
+                    height: 15,
+                    child: SpinKitThreeInOut(
+                      color: AppColors.blue,
+                      // size: 30,
+                    ),
+                  ),
+                  const Spacer(),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

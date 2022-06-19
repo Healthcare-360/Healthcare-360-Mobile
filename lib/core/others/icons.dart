@@ -2,6 +2,7 @@ class AppIcons {
   static const _path = 'assets/icons';
   static const _path2 = 'assets/svg';
 
+  static const logo = 'assets/Main-Theme.png';
   static const drIcon = '$_path/mobile-camera.svg';
 
   static const retCenter = '$_path2/ret-center.svg';

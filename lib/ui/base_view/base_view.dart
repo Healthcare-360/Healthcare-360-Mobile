@@ -19,6 +19,8 @@ export 'dart:developer';
 
 export '../../core/others/animations.dart';
 export '../widgets/header_widget.dart';
+export '../../core/others/links.dart';
+export '../widgets/header_widget.dart';
 
 class BaseViewWidget extends StatelessWidget {
   final AppBar? appBar;

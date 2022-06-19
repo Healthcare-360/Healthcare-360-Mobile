@@ -46,13 +46,10 @@ class RetinaHubView extends StatelessWidget {
       avoidScrollView: false,
       body: Column(
         children: <Widget>[
-          const Spacer(),
-
-          const Spacer(),
-          // const HeaderWidget(),
-          const SizedBox(
-            height: 100,
-          ),
+          const HeaderWidget(),
+          // const SizedBox(
+          //   height: 100,
+          // ),
           const CustomText(
             'Welcome to Retinal Hub',
             textAlign: TextAlign.center,

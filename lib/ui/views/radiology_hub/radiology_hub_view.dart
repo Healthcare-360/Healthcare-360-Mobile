@@ -16,7 +16,7 @@ class RadiologyHubView extends StatelessWidget {
       body: Column(
         children: <Widget>[
           const Spacer(),
-          // const HeaderWidget(),
+          const HeaderWidget(),
           const SizedBox(
             height: 20,
           ),
@@ -76,7 +76,6 @@ class RadiologyHubView extends StatelessWidget {
               context.read<TuberculosisViewModel>().showPicker(context);
             },
           ),
-
           Menu2Tile(
             preHead: 'Radiology Hub',
             title: 'Thorax Diseases',

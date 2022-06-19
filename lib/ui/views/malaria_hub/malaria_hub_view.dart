@@ -14,7 +14,7 @@ class MalariaHubView extends StatelessWidget {
       body: Column(
         children: <Widget>[
           const Spacer(),
-          // const HeaderWidget(),
+          const HeaderWidget(),
           const SizedBox(
             height: 20,
           ),

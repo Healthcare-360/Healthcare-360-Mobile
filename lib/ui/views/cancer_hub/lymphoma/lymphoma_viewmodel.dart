@@ -3,7 +3,6 @@ import 'package:flutter/foundation.dart' as notify;
 import 'package:flutter/material.dart';
 import 'package:healthcare_360_mobile/core/models/cancer_models/lymphoma_model.dart';
 import 'package:healthcare_360_mobile/core/models/tflite_return_model.dart';
-import 'package:healthcare_360_mobile/ui/views/cancer_hub/cervical_cancer/cervical_results_view.dart';
 import 'package:healthcare_360_mobile/ui/views/cancer_hub/lymphoma/lymphoma_classifier.dart';
 import 'package:healthcare_360_mobile/ui/views/cancer_hub/lymphoma/lymphoma_classifier_float.dart';
 import 'package:healthcare_360_mobile/ui/views/cancer_hub/lymphoma/lymphoma_results_view.dart';

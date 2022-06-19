@@ -120,17 +120,6 @@ class _MenuViewState extends State<MenuView> {
               },
             ),
             // robot.svg
-
-            Menu2Tile(
-              title: 'Heart Disease',
-              subTitle: 'Detection',
-              iconPath: 'assets/ecg-reading.svg',
-              iconHeight: 70,
-              color: AppColors.lightBlue,
-              action: () {
-                // Get.to(() => const CardioVascularHub());
-              },
-            ),
             Menu2Tile(
               title: 'Environment',
               subTitle: 'Air Quality',
@@ -140,6 +129,23 @@ class _MenuViewState extends State<MenuView> {
               color: const Color(0xFFCF9F76).withOpacity(0.12),
               action: () {
                 Get.to(() => const EnvironmentHubView());
+              },
+            ),
+
+            Menu2Tile(
+              title: 'Heart Disease',
+              subTitle: 'Detection',
+              iconPath: 'assets/ecg-reading.svg',
+              iconHeight: 70,
+              color: AppColors.lightBlue,
+              action: () {
+                CheckInternet.check().then((status) {
+                  if (status == InternetStatus.connected) {
+                    Get.to(() => const ChatBotView());
+                  } else if (status == InternetStatus.notConnected) {
+                    _showDialog();
+                  }
+                });
               },
             ),
             Menu2Tile(
@@ -153,17 +159,17 @@ class _MenuViewState extends State<MenuView> {
               },
             ),
 
-            Menu2Tile(
-              title: 'EMR',
-              subTitle: 'Electronic Medical Records',
-              iconPath: 'assets/emr.svg',
-              iconHeight: 60,
-              iconColor: const Color(0xFF2196F3),
-              color: const Color(0xFF2196F3).withOpacity(0.1),
-              action: () {
-                // Get.to(() => const CardioVascularHub());
-              },
-            ),
+            // Menu2Tile(
+            //   title: 'EMR',
+            //   subTitle: 'Electronic Medical Records',
+            //   iconPath: 'assets/emr.svg',
+            //   iconHeight: 60,
+            //   iconColor: const Color(0xFF2196F3),
+            //   color: const Color(0xFF2196F3).withOpacity(0.1),
+            //   action: () {
+            //     // Get.to(() => const CardioVascularHub());
+            //   },
+            // ),
             Menu2Tile(
               title: 'Malaria',
               subTitle: 'Detection',
