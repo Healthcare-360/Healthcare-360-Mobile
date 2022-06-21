@@ -14,16 +14,24 @@ class HeartDiseaseView extends StatefulWidget {
 
 class _HeartDiseaseViewState extends State<HeartDiseaseView> {
   bool _isLoad = false;
+  WebViewController? _controller;
+
+  @override
+  void dispose() {
+    _controller?.clearCache();
+
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    WebViewController? _controller;
     // ignore: prefer_const_constructors
     return BaseViewWidget(
       avoidScrollView: true,
       appBar: AppBar(
         backgroundColor: AppColors.purple,
         title: const CustomText(
-          'AQI Levels Searcher',
+          'Heart Disease Detection',
           color: AppColors.white,
         ),
         centerTitle: true,

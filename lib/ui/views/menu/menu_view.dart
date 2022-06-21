@@ -3,6 +3,7 @@ import 'package:healthcare_360_mobile/core/utilities/check_internet.dart';
 import 'package:healthcare_360_mobile/ui/base_view/base_view.dart';
 import 'package:healthcare_360_mobile/ui/shared_widgets/menu_tile.dart';
 import 'package:healthcare_360_mobile/ui/views/cancer_hub/cancer_hub_view.dart';
+import 'package:healthcare_360_mobile/ui/views/cardiac_hub/heart_disease_view.dart';
 import 'package:healthcare_360_mobile/ui/views/chatbot_hub/chatbot_view.dart';
 import 'package:healthcare_360_mobile/ui/views/environment_hub/environment_hub_view.dart';
 import 'package:healthcare_360_mobile/ui/views/malaria_hub/malaria_hub_view.dart';
@@ -52,7 +53,7 @@ class _MenuViewState extends State<MenuView> {
         avoidScrollView: false,
         body: Column(
           children: [
-            Lottie.asset(AppAnimations.homeScreen, height: 280),
+            Lottie.asset(AppAnimations.homeScreen, height: 280, repeat: true),
             SizedBox(
               height: 25.h,
             ),
@@ -141,7 +142,7 @@ class _MenuViewState extends State<MenuView> {
               action: () {
                 CheckInternet.check().then((status) {
                   if (status == InternetStatus.connected) {
-                    Get.to(() => const ChatBotView());
+                    Get.to(() => const HeartDiseaseView());
                   } else if (status == InternetStatus.notConnected) {
                     _showDialog();
                   }

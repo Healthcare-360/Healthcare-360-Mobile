@@ -14,9 +14,17 @@ class ChatBotView extends StatefulWidget {
 
 class _ChatBotViewState extends State<ChatBotView> {
   bool _isLoad = false;
+  WebViewController? _controller;
+
+  @override
+  void dispose() {
+    _controller?.clearCache();
+
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    WebViewController? _controller;
     // ignore: prefer_const_constructors
     return BaseViewWidget(
       avoidScrollView: true,
