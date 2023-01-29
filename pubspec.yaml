@@ -1,6 +1,11 @@
 name: healthcare_360_mobile
 description: A new Flutter project.
 
+# Build using Flutter
+# Version: 2.10.0
+# Dart Version: 2.16.0
+# Powered by FVM
+
 publish_to: "none"
 
 version: 1.0.0+1
