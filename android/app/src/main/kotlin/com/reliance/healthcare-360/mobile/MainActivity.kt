@@ -1,4 +1,4 @@
-package com.reliance.healthcare360.mobile
+package com.reliance.hc360.mobile
 
 import io.flutter.embedding.android.FlutterActivity
 
