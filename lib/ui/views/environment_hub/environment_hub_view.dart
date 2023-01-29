@@ -12,8 +12,8 @@ class EnvironmentHubView extends StatelessWidget {
 
   _showDialog(context) {
     Dialogs.materialDialog(
-        titleAlign: TextAlign.center,
-        msgAlign: TextAlign.center,
+        // titleAlign: TextAlign.center,
+        // msgAlign: TextAlign.center,
         color: Colors.white,
         msg: 'This feature requires internet connection',
         title: 'No Internet Connection',

@@ -23,8 +23,8 @@ class MenuView extends StatefulWidget {
 class _MenuViewState extends State<MenuView> {
   _showDialog() {
     Dialogs.materialDialog(
-        titleAlign: TextAlign.center,
-        msgAlign: TextAlign.center,
+        // titleAlign: TextAlign.center,
+        // msgAlign: TextAlign.center,
         color: Colors.white,
         msg: 'This feature requires internet connection',
         title: 'No Internet Connection',

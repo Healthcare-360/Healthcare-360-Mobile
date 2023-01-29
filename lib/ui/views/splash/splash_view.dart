@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:get/get.dart';
 import 'package:healthcare_360_mobile/ui/base_view/base_view.dart';
 import 'package:healthcare_360_mobile/ui/views/menu/menu_view.dart';
-import 'package:healthcare_360_mobile/ui/views/onboarding/onboarding_view.dart';
 import 'package:lottie/lottie.dart';
 
 class SplashView extends StatefulWidget {

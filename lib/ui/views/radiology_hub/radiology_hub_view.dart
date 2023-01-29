@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:healthcare_360_mobile/ui/base_view/base_view.dart';
-import 'package:healthcare_360_mobile/ui/views/radiology_hub/covid_19/cov_viewmodel.dart';
 import 'package:healthcare_360_mobile/ui/views/radiology_hub/pneumonia/pneumona_viewmodel.dart';
 import 'package:healthcare_360_mobile/ui/views/radiology_hub/thorax_diseases/thorax_viewmodel.dart';
 import 'package:healthcare_360_mobile/ui/views/radiology_hub/tuberculosis/tuberculosis_viewmodel.dart';
@@ -36,24 +35,24 @@ class RadiologyHubView extends StatelessWidget {
             height: 20.h,
           ),
           const CustomText(
-            'We use our Models to detect Pneumonia, Covid-19, Tuberculosis or Thorax Diseases by analyzing xray images. Our intelligent A.I System classifies and categorize the results for you',
+            'We use our Models to detect Pneumonia,Tuberculosis or Thorax Diseases by analyzing xray images. Our intelligent A.I System classifies and categorize the results for you',
             textAlign: TextAlign.center,
             style: TextStyles.r_14,
           ),
           SizedBox(
             height: 30.h,
           ),
-          Menu2Tile(
-            title: 'Covid\'19',
-            preHead: 'Radiology Hub',
-            subTitle: 'Let\'s Detect',
-            iconPath: AppIcons.covid,
-            color: const Color(0xFF009688).withOpacity(0.1),
-            iconHeight: 60,
-            action: () {
-              context.read<CovViewModel>().showPicker(context);
-            },
-          ),
+          // Menu2Tile(
+          //   title: 'Covid\'19',
+          //   preHead: 'Radiology Hub',
+          //   subTitle: 'Let\'s Detect',
+          //   iconPath: AppIcons.covid,
+          //   color: const Color(0xFF009688).withOpacity(0.1),
+          //   iconHeight: 60,
+          //   action: () {
+          //     context.read<CovViewModel>().showPicker(context);
+          //   },
+          // ),
           Menu2Tile(
             preHead: 'Radiology Hub',
             title: 'Pneumonia',
